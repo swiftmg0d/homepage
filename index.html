@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link
+      rel="preload"
+      as="image"
+      href="/runner.webp"
+      type="image/webp"
+      fetchpriority="high"
+    />
+    <title>Zhivche Gligorov - Fullstack Engineer</title>
+    <style>
+      html {
+        background: rgb(221, 225, 196);
+      }
+      html[data-theme='dark'] {
+        background: rgb(35, 43, 37);
+        color-scheme: dark;
+      }
+    </style>
+    <script>
+      try {
+        var t = localStorage.getItem('theme');
+        if (t !== 'light' && t !== 'dark')
+          t = matchMedia('(prefers-color-scheme: dark)').matches
+            ? 'dark'
+            : 'light';
+        document.documentElement.dataset.theme = t;
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
